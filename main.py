@@ -4,9 +4,16 @@
 
 import random
 import time
+import string
 
 
 password_tries = 0 #also add a time out, so after some time it will have to reeneter the password for Verison 2.x
+
+def randompassword():
+    chars = string.ascii_uppercase + string.ascii_lowercase + string.digits
+    
+    
+
 
 while password_tries < 3:
 
@@ -24,14 +31,12 @@ while password_tries < 3:
                 name_of_software = input("Enter the web or app name: ")
                 username = input("Enter your username: ")
                 input_length = int(input("Enter the length: "))
-                lower = "abcdefghijklmnopqrstuvwxyz"
-                higher = "ABCDEFGHIFJKLMNOPQRSTUVWXYZ"
-                symbols = "!@#$%^&*()+=/"
+                speical_Letters = "!@#$%^&*_+=-~`<>/?()"
+                new_password = string.ascii_uppercase + string.ascii_lowercase + string.digits + speical_Letters
 
-                test = lower + higher + symbols
                 length = input_length
 
-                Password = "".join(random.sample(test, length))
+                Password = "".join(random.sample(new_password, length))
 
                 print(Password)
                    
@@ -40,25 +45,42 @@ while password_tries < 3:
                 print("Aight bet.")
 
                 file_append = open("Passwords.txt", "a")
-                file_append.write(f"\n{name_of_software} ({username}: '{Password}')")
+                file_append.write(f"\n{name_of_software}: [{username} - {Password}]")
                 file_append.close()
 
             elif command == "ADD":
                 ask1 = input("Enter the Website or App: ")
                 ask2 = input("Enter the username for it: ")
-                ask3 = input("Enter the password for it: ")
-                ask4 = input("Verify your password: " )
-
-                if ask3 == ask4:
-                    
-                    print("Sucess!")
                 
-                    with open("Passwords.txt" , "a") as addPasswords:
-                        addPasswords.write(f"\n{ask1} : [{ask2} - {ask3}]")
-                        addPasswords.close()
+                while True:
+                    ask3 = input("Enter the password for it: ")
+                    ask4 = input("Verify your password: " )
 
-                elif ask3 != ask4:
-                    print("try and verify it again.")
+                    if ask3 == ask4:
+                        with open("Passwords.txt" , "a") as addPasswords:
+                            addPasswords.write(f"\n{ask1} : [{ask2} - {ask3}]")
+                            addPasswords.close()
+
+                        print("Sucess!")
+                        break
+                    
+                    elif ask3 != ask4:
+                        print("Try again.")
+                        continue
+
+                        
+
+                #if ask3 == ask4:
+                    
+                    #print("Sucess!")
+                
+                    #with open("Passwords.txt" , "a") as addPasswords:
+                        #addPasswords.write(f"\n{ask1} : [{ask2} - {ask3}]")
+                        #addPasswords.close()
+
+                #elif ask3 != ask4:
+                    #print("try and verify it again.")
+                    
 
  
             
