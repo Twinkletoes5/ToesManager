@@ -3,11 +3,10 @@ import time
 import string
 
 
-password_tries = 0 #also add a time out, so after some time it will have to reeneter the password for Verison 2.x
-        
+password_tries = 0 
 while password_tries < 3:
 
-    enter_password = input("Enter Password: ") #add limited tries in the program. So the user only gets three try from entering the password (By adding an If statement?) No You dont add "if" you add while loop and change the condition
+    enter_password = input("Enter Password: ")
     right_password = "5eanisatCA"
     quit_password = "QUIT"
     password_tries = password_tries + 1
