@@ -1,20 +1,10 @@
-#trying to implament bold text when displaying in to the terminal (Later)
-#tring to implamnt copy to cilpboard
-#try to implament (Add existing passwords)
-
 import random
 import time
 import string
 
 
 password_tries = 0 #also add a time out, so after some time it will have to reeneter the password for Verison 2.x
-
-def randompassword():
-    chars = string.ascii_uppercase + string.ascii_lowercase + string.digits
-    
-    
-
-
+        
 while password_tries < 3:
 
     enter_password = input("Enter Password: ") #add limited tries in the program. So the user only gets three try from entering the password (By adding an If statement?) No You dont add "if" you add while loop and change the condition
@@ -40,8 +30,6 @@ while password_tries < 3:
 
                 print(Password)
                    
-
-                
                 print("Aight bet.")
 
                 file_append = open("Passwords.txt", "a")
@@ -68,23 +56,6 @@ while password_tries < 3:
                         print("Try again.")
                         continue
 
-                        
-
-                #if ask3 == ask4:
-                    
-                    #print("Sucess!")
-                
-                    #with open("Passwords.txt" , "a") as addPasswords:
-                        #addPasswords.write(f"\n{ask1} : [{ask2} - {ask3}]")
-                        #addPasswords.close()
-
-                #elif ask3 != ask4:
-                    #print("try and verify it again.")
-                    
-
- 
-            
-
             elif command == "CHECK":
                 file_read = open("Passwords.txt", "r")
                 print(file_read.read())
@@ -95,7 +66,6 @@ while password_tries < 3:
                 time.sleep(3)
                 quit()
                 #sys.exit()
-
 
             else:
                 print("Wrong thing mate")
