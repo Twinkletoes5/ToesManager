@@ -43,7 +43,7 @@ while password_tries < 3:
                 print("Aight bet.")
 
                 with open("Passwords.txt", "a") as writePasswordtoFile:
-                    writePasswordtoFile.write(f"\n{name_of_software}: [{username} - {Password}]")
+                    writePasswordtoFile.write(f"{name_of_software}: \nUserName: {username}\nPassword: {Password}\n\n")
                     writePasswordtoFile.close()
 
             elif command == "ADD":
@@ -56,7 +56,7 @@ while password_tries < 3:
 
                     if ask3 == ask4:
                         with open("Passwords.txt" , "a") as addPasswords:
-                            addPasswords.write(f"\n{ask1} : [{ask2} - {ask3}]")
+                            addPasswords.write(f"{ask1}: \nUserName: {ask2}\nPassword: {ask3}\n\n")
                             addPasswords.close()
 
                         print("Sucess!")
