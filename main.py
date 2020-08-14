@@ -10,7 +10,7 @@ while password_tries < 3:
     enter_password = input("Enter Password: ")
     right_password = "5eanisatCA"
     quit_password = "QUIT"
-    password_tries = password_tries + 1
+    password_tries += 1
 
     if enter_password == right_password:
 
@@ -19,21 +19,17 @@ while password_tries < 3:
     
             if command == "NEW":
                 name_of_software = input("Enter the web or app name: ")
-                username = input("Enter your username: ")
-
+                username = input("Enter your username: ") 
                 try:
-                    input_length = int(input("Enter the length: ")) #Use Try and Execpt, because it would break the program if user didn't use the right one 
+                    input_length = int(input("Enter the length: "))
                 except ValueError:
-                    print("Wrong Value")
+                    print("Try entering an interger")
                     continue
 
-
                 speical_Letters = "!@#$%^&*_+=-~`<>/?()"
-                new_password = string.ascii_uppercase + string.ascii_lowercase + string.digits + speical_Letters
+                contentsOfPassword = string.ascii_uppercase + string.ascii_lowercase + string.digits + speical_Letters
 
-                length = input_length
-
-                Password = "".join(random.sample(new_password, length))
+                Password = "".join(random.sample(contentsOfPassword, input_length))
 
                 print(Password)
 
@@ -71,9 +67,9 @@ while password_tries < 3:
                         continue
 
             elif command == "CHECK":
-                file_read = open("Passwords.txt", "r")
-                print(file_read.read())
-                file_read.close()
+                with open("Passwords.txt", "r") as readPasswordFile:
+                    print(readPasswordFile.read())
+                    readPasswordFile.close()
 
             elif command == "QUIT":
                 print("Closing...")
