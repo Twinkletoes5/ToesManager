@@ -46,9 +46,9 @@ while password_tries < 3:
                    
                 print("Aight bet.")
 
-                file_append = open("Passwords.txt", "a")
-                file_append.write(f"\n{name_of_software}: [{username} - {Password}]")
-                file_append.close()
+                with open("Passwords.txt", "a") as writePasswordtoFile:
+                    writePasswordtoFile.write(f"\n{name_of_software}: [{username} - {Password}]")
+                    writePasswordtoFile.close()
 
             elif command == "ADD":
                 ask1 = input("Enter the Website or App: ")
@@ -77,21 +77,23 @@ while password_tries < 3:
 
             elif command == "QUIT":
                 print("Closing...")
-                time.sleep(3)
+                time.sleep(2)
                 quit()
-                #sys.exit()
 
             else:
                 print("Wrong thing mate")
 
     elif enter_password.upper() == quit_password:
         print("Closing...")
-        time.sleep(3)
+        time.sleep(2)
         break
 
     else:
         print('You are not Sean You son of a bitch!!!')
+
 else:
     print("Nah, get out man")
+    time.sleep(2)
+    quit()
 
-time.sleep(3)
+
