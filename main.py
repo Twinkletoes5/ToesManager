@@ -47,16 +47,16 @@ while password_tries < 3:
                     writePasswordtoFile.close()
 
             elif command == "ADD":
-                ask1 = input("Enter the Website or App: ")
-                ask2 = input("Enter the username for it: ")
+                add_appName = input("Enter the Website or App: ")
+                add_userName = input("Enter the username for it: ")
                 
                 while True:
-                    ask3 = input("Enter the password for it: ")
-                    ask4 = input("Verify your password: " )
+                    add_passWord = input("Enter the password for it: ")
+                    add_passWord_Verify = input("Verify your password: " )
 
                     if ask3 == ask4:
                         with open("Passwords.txt" , "a") as addPasswords:
-                            addPasswords.write(f"{ask1}: \nUserName: {ask2}\nPassword: {ask3}\n\n")
+                            addPasswords.write(f"{add_appName}: \nUserName: {add_userName}\nPassword: {add_passWord}\n\n")
                             addPasswords.close()
 
                         print("Sucess!")
