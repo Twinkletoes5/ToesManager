@@ -1,6 +1,7 @@
 import random
 import time
 import string
+import pyperclip
 
 
 password_tries = 0 
@@ -19,7 +20,14 @@ while password_tries < 3:
             if command == "NEW":
                 name_of_software = input("Enter the web or app name: ")
                 username = input("Enter your username: ")
-                input_length = int(input("Enter the length: "))
+
+                try:
+                    input_length = int(input("Enter the length: ")) #Use Try and Execpt, because it would break the program if user didn't use the right one 
+                except ValueError:
+                    print("Wrong Value")
+                    continue
+
+
                 speical_Letters = "!@#$%^&*_+=-~`<>/?()"
                 new_password = string.ascii_uppercase + string.ascii_lowercase + string.digits + speical_Letters
 
@@ -28,6 +36,13 @@ while password_tries < 3:
                 Password = "".join(random.sample(new_password, length))
 
                 print(Password)
+
+                askIfNeedtoCopy = input("Do you want it to be copy to the clipboard? (Y/N): ").upper()
+                if askIfNeedtoCopy == "Y":
+                    pyperclip.copy(Password)
+                else:
+                    print("Alright then.")
+
                    
                 print("Aight bet.")
 
