@@ -54,7 +54,7 @@ while password_tries < 3:
                     add_passWord = input("Enter the password for it: ")
                     add_passWord_Verify = input("Verify your password: " )
 
-                    if ask3 == ask4:
+                    if add_passWord == add_passWord_Verify:
                         with open("Passwords.txt" , "a") as addPasswords:
                             addPasswords.write(f"{add_appName}: \nUserName: {add_userName}\nPassword: {add_passWord}\n\n")
                             addPasswords.close()
