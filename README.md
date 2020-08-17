@@ -8,6 +8,8 @@ As of August 7th, Its only for personal use. Copyright resesrved Twinkletoes.tec
 
     python3
 
+    pyperclips (pip install pyperclips)
+
 ## Running the Program
 
     $ python3 main.py

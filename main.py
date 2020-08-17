@@ -62,7 +62,7 @@ while password_tries < 3:
                         print("Sucess!")
                         break
                     
-                    elif ask3 != ask4:
+                    elif add_passWord != add_passWord_Verify:
                         print("Try again.")
                         continue
 
