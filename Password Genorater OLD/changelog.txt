@@ -1,0 +1,7 @@
+July 29:
+    Main3.0 is out {
+        
+        Added the Feature "Add users' existing passwords"
+    }
+
+    
