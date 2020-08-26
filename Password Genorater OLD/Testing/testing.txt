@@ -1,3 +1,0 @@
-[1mHello World![0m
-Hello World![1mHello World![0m
-Hello World!

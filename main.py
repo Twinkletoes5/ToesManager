@@ -2,13 +2,73 @@ import random
 import time
 import string
 import pyperclip
+import os.path
+from time import sleep
 
+
+def initalSetup():
+    print("Hello, Welcome to ToesManager, a Local Password Manager!")
+    sleep(1)
+    print("Lets start by you name!")
+    usersName = input(": ")
+    print("Great!")
+    sleep(1)
+    print("Now, create a master password to access all you password!")
+    sleep(1)
+    masterPassword = input(": ")
+
+    print("Are These Correct?")
+    print(usersName)
+    print(masterPassword)
+    askIfCorrect = input(": ").upper()
+    
+    while askIfCorrect != "YES":
+        print("What would you like to change?")
+        askWhatToChange = input("Name or Password or Both: ").upper()
+        if askWhatToChange == "NAME":
+            print("Please enter in you name.")
+            usersName = input(": ")
+        elif askWhatToChange == "PASSWORD":
+            print("Please enter in your master Password again!")
+            masterPassword = input(":")
+        elif askWhatToChange == "BOTH":
+            print("Please enter in you name.")
+            usersName = input(": ")
+            print("Please enter in your master Password again!")
+            masterPassword = input(":")
+        else:
+            print("Please say YES or NO or BOTH")
+            
+        print("Are These Correct?")
+        print(usersName)
+        print(masterPassword)
+        askIfCorrect = input(": ").upper()
+    
+    with open ("usersName.txt", "w") as usersNameFile:
+        usersNameFile.write(usersName)
+        usersNameFile.close()
+    with open ("masterPassword.txt", "w") as usersPasswordFile:
+        usersPasswordFile.write(masterPassword)
+        usersPasswordFile.close()        
+
+checkForFile1 = (os.path.exists("usersName.txt"))
+checkForFile2 = (os.path.exists("masterPassword.txt"))
+if checkForFile1 and checkForFile2 == True:
+    pass
+else:
+    initalSetup()
+
+
+with open("usersName.txt", "r") as readUsersName:
+    nameOfUser = readUsersName.readline()
+with open("masterPassword.txt", "r") as readMasterPassword:
+    usersMasterPasswd = readMasterPassword.readline()
 
 password_tries = 0 
 while password_tries < 3:
 
     enter_password = input("Enter Password: ")
-    right_password = "5eanisatCA"
+    right_password = usersMasterPasswd
     quit_password = "QUIT"
     password_tries += 1
 
@@ -43,7 +103,7 @@ while password_tries < 3:
                 print("Aight bet.")
 
                 with open("Passwords.txt", "a") as writePasswordtoFile:
-                    writePasswordtoFile.write(f"{name_of_software}: \nUserName: {username}\nPassword: {Password}\n\n")
+                    writePasswordtoFile.write(f"{name_of_software}: \nUserName:\n    {username}\nPassword:\n    {Password}\n\n")
                     writePasswordtoFile.close()
 
             elif command == "ADD":
@@ -56,7 +116,7 @@ while password_tries < 3:
 
                     if add_passWord == add_passWord_Verify:
                         with open("Passwords.txt" , "a") as addPasswords:
-                            addPasswords.write(f"{add_appName}: \nUserName: {add_userName}\nPassword: {add_passWord}\n\n")
+                            addPasswords.write(f"{add_appName}: \nUserName:\n    {add_userName}\nPassword:\n    {add_passWord}\n\n")
                             addPasswords.close()
 
                         print("Sucess!")
@@ -85,10 +145,11 @@ while password_tries < 3:
         break
 
     else:
-        print('You are not Sean You son of a bitch!!!')
+        print(f'You are not {nameOfUser} You muffiinHead!!!')
 
 else:
-    print("Nah, get out man")
+    print("User Authtication Failed")
+    print("quiting...")
     time.sleep(2)
     quit()
 
