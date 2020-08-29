@@ -4,7 +4,7 @@ A password manager and generator!
 
 # Download
 
-At **[Github Release]** (https://github.com/Twinkletoes5/ToesManager/releases/tag/v1.1.0-alpha)
+At ***[Github Release](https://github.com/Twinkletoes5/ToesManager/releases/tag/v1.1.0-alpha)***
 
 # Disclaimer
 
