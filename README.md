@@ -12,7 +12,7 @@ Twinkletoes.tech is not responsable for lost passwords. We do not have databases
 Twinkletoes.tech is not responsable for stolen passwords. We are still currnetly working on encrytions.
 
 # Running the Program
-The user would have to run it from System Admin! (Or else, it couldn't access the file)
+****The user would have to run it from System Admin! (Or else, it couldn't access the file)****
 
 # Commands
 * **New** - Generates a new password for the user and copies it to clipboard.
