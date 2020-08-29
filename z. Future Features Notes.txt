@@ -1,9 +1,0 @@
-
-use class and object.
-Try the "rewrite file" like changing the text in the file.
-
-add a "Copy to Cilpboard" feature
-
-Add a Feature like "Access to different Passwords.txt file" So it would organzied into like "schoolPassword.txt" "workPassword.txt"
-etc etc.
-
