@@ -7,4 +7,4 @@ def Clear_Console():
   if User_Platform == "Darwin":
     os.system('clear')
   elif User_Platform == "Windows":
-    os.system('clr')
+    os.system('cls')
