@@ -4,7 +4,7 @@ import string
 import pyperclip
 import os.path
 from time import sleep
-import clear
+from function import clear
 import time
 
 class ToesManager:
