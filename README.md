@@ -2,6 +2,10 @@
 
 A password manager and generator!
 
+# Download
+
+At **[Github Release]** (https://github.com/Twinkletoes5/ToesManager/releases/tag/v1.1.0-alpha)
+
 # Disclaimer
 
 Twinkletoes.tech is not responsable for lost passwords. We do not have databases that stores it. Its all in local machine.\
