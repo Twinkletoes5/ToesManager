@@ -3,3 +3,7 @@
 /__pycache__
 
 .DS_Store
+
+function/__pycache__/clear.cpython-38.pyc
+
+*__pycache__
