@@ -157,8 +157,34 @@ class ToesManager:
   #         startlog = time.time()
 
   def Change_Settings():
-    print("Hello")
+    print("What settings do you want to change?")
+    print("Username or Password?")
+    Change_setting_anwser = input(": ").upper()
 
+    if Change_setting_anwser == "PASSWORD":
+      print("Enter in your new password!")
+      Users_New_Password = input(": ")
+      with open("masterPassword.txt", "w") as Change_password_file:
+        Change_password_file.write(Users_New_Password)
+      print("Sucess!")
+
+    elif Change_setting_anwser == "USERNAME":
+      print("Enter in your new username!")
+      Users_New_Username = input(": ")
+      with open("usersName.txt", "w") as Change_name_file:
+        Change_name_file.write(Users_New_Username)
+      print("Sucess!")
+
+    elif Change_setting_anwser == "BOTH":
+      print("Enter in your username!")
+      Users_New_Username = input(": ")
+      print("Enter in your new password!")
+      Users_New_Password = input(": ")
+      with open("masterPassword.txt", "w") as Change_password_file:
+        Change_password_file.write(Users_New_Password)
+      with open("usersName.txt", "w") as Change_name_file:
+        Change_name_file.write(Users_New_Username)
+      print("Sucess!")
 
 
 
