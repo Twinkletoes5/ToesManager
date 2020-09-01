@@ -74,6 +74,11 @@ class ToesManager:
     else:
       pass
 
+    if name_of_software.upper() == "EXIT" or "QUIT":
+      ToesManager.Quiting_Program()
+    else:
+      pass
+
     username = input("Enter your username: ")
     while True: 
       try:
@@ -105,6 +110,11 @@ class ToesManager:
     else:
       pass
     add_userName = input("Enter the username for it: ")
+
+    if add_appName.upper() == "EXIT" or "QUIT":
+      ToesManager.Quiting_Program()
+    else:
+      pass
     
     while True:
       add_passWord = input("Enter the password for it: ")
@@ -217,7 +227,7 @@ while Password_Tries < 3:
           ToesManager.Check_Password()
       elif command == "ADD":
           ToesManager.Add_Password()
-      elif command == "QUIT":
+      elif command == "QUIT" or "EXIT":
           ToesManager.Quiting_Program()
       elif command == "HELP":
           ToesManager.Help()
