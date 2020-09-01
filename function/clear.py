@@ -8,3 +8,5 @@ def Clear_Console():
     os.system('clear')
   elif User_Platform == "Windows":
     os.system('cls')
+  elif User_Platform == "Linux":
+    os.system("clear")
