@@ -98,7 +98,7 @@ class ToesManager:
     pyperclip.copy(Password) 
     print("The password is created and Copied!")
 
-    with open("Passwords.txt", "a") as writePasswordtoFile:
+    with open("Password.txt", "a") as writePasswordtoFile:
       writePasswordtoFile.write(f"{name_of_software}: \nUserName:\n    {username}\nPassword:\n    {Password}\n\n")
       writePasswordtoFile.close()
 
@@ -121,9 +121,9 @@ class ToesManager:
       add_passWord_Verify = input("Verify your password: " )
 
       if add_passWord == add_passWord_Verify:
-        with open("Passwords.txt" , "a") as addPasswords:
-          addPasswords.write(f"{add_appName}: \nUserName:\n    {add_userName}\nPassword:\n    {add_passWord}\n\n")
-          addPasswords.close()
+        with open("Password.txt" , "a") as addPassword:
+          addPassword.write(f"{add_appName}: \nUserName:\n    {add_userName}\nPassword:\n    {add_passWord}\n\n")
+          addPassword.close()
 
           print("Sucess!")
           break
@@ -136,7 +136,7 @@ class ToesManager:
 
 
   def Check_Password():
-    with open("Passwords.txt", "r") as readPasswordFile:
+    with open("PasswordFixed Bug Clear in Windows.txt", "r") as readPasswordFile:
       print(readPasswordFile.read())
       readPasswordFile.close()
 
