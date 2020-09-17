@@ -6,6 +6,7 @@ import os.path
 from time import sleep
 from function import clear
 import time
+import getpass
 
 class ToesManager:
     
@@ -18,7 +19,8 @@ class ToesManager:
     sleep(1)
     print("Now, create a master password to access all you password!")
     sleep(1)
-    masterPassword = input(": ")
+    # masterPassword = input(": ")
+    masterPassword = getpass.getpass(": ")
 
     print("Are These Correct?")
     print(usersName)
@@ -33,12 +35,14 @@ class ToesManager:
         usersName = input(": ")
       elif askWhatToChange == "PASSWORD":
         print("Please enter in your master Password again!")
-        masterPassword = input(":")
+        # masterPassword = input(":")
+        masterPassword = getpass.getpass(": ")
       elif askWhatToChange == "BOTH":
         print("Please enter in you name.")
         usersName = input(": ")
         print("Please enter in your master Password again!")
-        masterPassword = input(":")
+        # masterPassword = input(":")
+        masterPassword = getpass.getpass(": ")
       else:
           print("Please say YES or NO or BOTH")
             
@@ -117,8 +121,11 @@ class ToesManager:
       pass
     
     while True:
-      add_passWord = input("Enter the password for it: ")
-      add_passWord_Verify = input("Verify your password: " )
+      # add_passWord = input("Enter the password for it: ")
+      # add_passWord_Verify = input("Verify your password: " )
+
+      add_passWord = getpass.getpass("Enter the password for it: ")
+      add_passWord_Verify = getpass.getpass("Verify your password: ")
 
       if add_passWord == add_passWord_Verify:
         with open("Password.txt" , "a") as addPassword:
@@ -173,7 +180,8 @@ class ToesManager:
 
     if Change_setting_anwser == "PASSWORD":
       print("Enter in your new password!")
-      Users_New_Password = input(": ")
+      # Users_New_Password = input(": ")
+      Users_New_Password = getpass.getpass(": ")
       with open("masterPassword.txt", "w") as Change_password_file:
         Change_password_file.write(Users_New_Password)
       print("Sucess!")
@@ -186,10 +194,11 @@ class ToesManager:
       print("Sucess!")
 
     elif Change_setting_anwser == "BOTH":
-      print("Enter in your username!")
+      print("Enter in your username!") 
       Users_New_Username = input(": ")
       print("Enter in your new password!")
-      Users_New_Password = input(": ")
+      # Users_New_Password = input(": ")
+      Users_New_Password = getpass.getpass(": ")
       with open("masterPassword.txt", "w") as Change_password_file:
         Change_password_file.write(Users_New_Password)
       with open("usersName.txt", "w") as Change_name_file:
@@ -214,8 +223,10 @@ Password_Tries = 0
 while Password_Tries < 3:
 
   print("Enter you Password")
-  User_Entered_Password = input(": ")
+  # User_Entered_Password = input(": ")
+  User_Entered_Password = getpass.getpass(": ")
   Password_Tries += 1 
+
 
   if User_Entered_Password == usersMasterPasswd:
     while True:
